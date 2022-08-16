@@ -7,27 +7,28 @@ object Human
 object Bot
 object Goal
 object Choose
-object Options
+object Option
 object Rock
 object Paper
 object Scissors
-
+object Table
 
 RPS *-- Round
 RPS *--Player
+RPS *-- Table
 
 Player <|-- Human
 Player <|-- Bot
 Player *-- Goal
 
-Options <|-- Rock
-Options <|-- Paper
-Options <|-- Scissors
+Option <|-- Rock
+Option <|-- Paper
+Option <|-- Scissors
 
 Goal ..> Choose 
-Choose ..> Options
+Choose ..> Option
 
-RPS *-- Options
+Table *-- Option
 
 Round -->"2" Player
 
