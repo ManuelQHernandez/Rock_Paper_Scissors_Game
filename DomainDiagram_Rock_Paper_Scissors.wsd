@@ -15,7 +15,7 @@ object Table
 
 RPS *-- Round
 RPS *--Player
-RPS *-- Table
+Round *-- Table
 
 Player <|-- Human
 Player <|-- Bot
@@ -27,8 +27,8 @@ Option <|-- Scissors
 
 Goal ..> Choose 
 Choose ..> Option
-
-Table *-- Option
+Choose ..> Table
+Table --> Option
 
 Round -->"2" Player
 
