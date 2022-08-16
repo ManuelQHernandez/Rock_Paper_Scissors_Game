@@ -1,0 +1,34 @@
+@startuml VocabularyMain
+
+object RPS
+object Round
+object Player
+object Human
+object Bot
+object Goal
+object Choose
+object Options
+object Rock
+object Paper
+object Scissors
+
+
+RPS *-- Round
+RPS *--Player
+
+Player <|-- Human
+Player <|-- Bot
+Player *-- Goal
+
+Options <|-- Rock
+Options <|-- Paper
+Options <|-- Scissors
+
+Goal ..> Choose 
+Choose ..> Options
+
+RPS *-- Options
+
+Round -->"2" Player
+
+@enduml
