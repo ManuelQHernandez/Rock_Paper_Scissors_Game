@@ -1,0 +1,53 @@
+@startuml
+
+Package View {
+
+}
+
+Package Controller {
+}
+
+Package Model {
+  class Player{
+    idPlayer : int
+    name : String
+    idTypePlayer : int
+  }
+  class Round {
+    idRound : int
+    idPlayer 1: Player
+    idPlayer 2: Player
+    idWinner : Player
+    isFinished : boolean
+   
+  }
+  class TypePlayer {
+    idTypePlayer : int
+    name: String
+  }
+  Class Option{
+    idOption : int
+    name : String
+  }
+
+  Class Table {
+    idRound : int
+    idChooseOption1: int
+    idChooseOption2: int
+  }
+
+  Table o-- Option
+ 
+  Round *-- "Player 1" Player
+  Round *-- "Player 2" Player
+  Round *-- "Winner" Player
+
+  Table *-- Round
+  
+  
+  Player *-- TypePlayer  
+}
+
+
+
+@enduml
